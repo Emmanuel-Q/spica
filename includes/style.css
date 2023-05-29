@@ -1,0 +1,9 @@
+.card {
+    margin-bottom: 20px; /* Adds margin at the bottom of each card */
+  }
+  
+  .card:not(:last-child) {
+    border-right: 1px solid #ddd; /* Adds vertical divider */
+    padding-right: 15px; /* Adds padding on the right side of each card */
+  }
+  
