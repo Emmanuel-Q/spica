@@ -33,12 +33,14 @@
                             <div class="form-group">
                                 <label for="url">URL:<span class="required-field">*</span></label>
                                 <input type="text" name="url" id="url" class="form-control" value="<?php echo $page['url']; ?>" required>
+                                <small class="text-muted">Example: about or contact</small>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="title">Title:<span class="required-field">*</span></label>
                                 <input type="text" name="title" id="title" class="form-control" value="<?php echo $page['title']; ?>" required>
+                                <small class="text-muted">Enter the title of your page eg. My CMS | home, My CMS | about us,etc.</small>
                             </div>
                         </div>
                     </div>
@@ -47,7 +49,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="header">Header:<span class="required-field">*</span></label>
-                                <textarea name="header" id="header" class="form-control" required><?php echo $page['header']; ?></textarea>
+                                <input type="text" name="header" id="header" class="form-control" value="<?php echo $page['header']; ?>" required>
+                                <small class="text-muted">Add the page header eg. Home, contact, about us, etc</small>
                             </div>
                         </div>
                         <div class="col-md-6">

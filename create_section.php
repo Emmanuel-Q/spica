@@ -16,6 +16,7 @@
                         <div class="form-group">
                             <label for="name">Name:<span class="required-field">*</span></label>
                             <input type="text" name="name" id="name" class="form-control" required>
+                            <small class="text-muted">Enter your section name eg. Testimonial, Our Services, etc</small>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -28,6 +29,7 @@
                 <div class="form-group">
                     <label for="content">Content:<span class="required-field">*</span></label>
                     <textarea name="content" id="editor" class="form-control" required></textarea>
+                    <small class="text-muted">You can add anything and format the content here using the Editor</small>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
@@ -40,6 +42,7 @@
                     }
                     ?>
                         </select>
+                        <small class="text-muted">Select a page to add the section to</small>
                     </div>
                     <div class="col-md-6">
                         <label for="publish">Publish:</label>
@@ -54,6 +57,11 @@
         </div>
 
     </div>
-<!-- </div> -->
+    <!-- </div> -->
 
-<?php include('includes/footer.php'); ?>
+    <?php include('includes/footer.php'); ?>
+
+
+
+
+    

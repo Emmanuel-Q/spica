@@ -14,56 +14,32 @@
 
     ?>
 
-    <div class="main-panel">
-        <div class="content-wrapper">
-            <div class="">
-                <?php
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="">
+            <?php
                 // Check if the section exists
                 if ($section) {
                     // Display the form to edit the section
                     ?>
-                    <h2 class="text-center">Edit Section</h2>
-                    <a href="sections.php" class="btn btn-primary">Back</a>
-                    <form method="POST" action="../update_section.php" enctype="multipart/form-data">
-                        <input type="hidden" name="section_id" value="<?php echo $section['id']; ?>">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Name:<span class="required-field">*</span></label>
-                                    <input type="text" class="form-control" name="name" value="<?php echo $section['name']; ?>" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Image:</label>
-                                    <input type="file" class="form-control" name="image">
-                                </div>
-                                <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Current Image:</label>
-                                    <?php if (!empty($section['image'])) : ?>
-                                        <img src="../<?php echo $section['image']; ?>" alt="Current Image" class="img-fluid" width="150">
-                                    <?php endif; ?>
-                                </div>
-                            </div>
+            <h2 class="text-center">Edit Section</h2>
+            <a href="sections.php" class="btn btn-primary">Back</a>
+            <form method="POST" action="../update_section.php" enctype="multipart/form-data">
+                <input type="hidden" name="section_id" value="<?php echo $section['id']; ?>">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Name:<span class="required-field">*</span></label>
+                            <input type="text" class="form-control" name="name" value="<?php echo $section['name']; ?>"
+                                required>
+                                <small class="text-muted">Enter your section name eg. Testimonial, Our Services, etc</small>
                         </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Content:<span class="required-field">*</span></label>
-                                    <textarea name="content" id="editor" class="form-control" rows="5" required><?php echo $section['content']; ?></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Page:</label>
-                                    <select name="page_id" class="form-control" required>
-                                        <?php
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Page:</label>
+                            <select name="page_id" class="form-control" required>
+                                <?php
                                         // Fetch all pages from the database
                                         $pages = get_all_pages();
 
@@ -72,29 +48,50 @@
                                             echo "<option value='" . $page['id'] . "' $selected>" . $page['title'] . "</option>";
                                         }
                                         ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Publish:</label>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="publish" value="1" <?php echo ($section['published'] == 1) ? 'checked' : ''; ?>>
-                                        <label class="form-check-label">Publish Section</label>
-                                    </div>
-                                </div>
+                            </select>
+                            <small class="text-muted">Select a page to add the section to</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Content:<span class="required-field">*</span></label>
+                            <textarea name="content" id="editor" class="form-control" rows="5"
+                                required><?php echo $section['content']; ?></textarea>
+                                <small class="text-muted">You can add anything and format the content here using the Editor</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Image:</label>
+                            <input type="file" class="form-control" name="image">
+                            <?php if (!empty($section['image'])) : ?>
+                            <img src="../<?php echo $section['image']; ?>" alt="Current Image" class="img-fluid">
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Publish:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="publish" value="1"
+                                    <?php echo ($section['published'] == 1) ? 'checked' : ''; ?>>
+                                <label class="form-check-label">Publish Section</label>
                             </div>
                         </div>
-                        <button class="btn btn-success" type="submit">Update Section</button>
-                    </form>
-                <?php
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit">Update Section</button>
+            </form>
+            <?php
                 } else {
                     echo "Section not found";
                 }
                 ?>
-            </div>
-        <!-- </div>
-    </div> -->
+        </div>
 
-    <br><br>
-    <?php include('includes/footer.php'); ?>
+        <br><br>
+        <?php include('includes/footer.php'); ?>

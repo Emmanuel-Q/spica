@@ -22,7 +22,8 @@
                     </div>
                     <div class="col-md-6">
                         <label for="title">Title:<span class="required-field">*</span></label>
-                        <input type="text" name="title" id="title" class="form-control" required>
+                        <input type="text" name="title" id="title" class="form-control" required placeholder="Home">
+                        <small class="text-muted">Enter the title of your page eg. My CMS | home, My CMS | about us,etc.</small>
                     </div>
                 </div>
 
@@ -30,10 +31,12 @@
                     <div class="col-md-6">
                         <label for="header">Header:<span class="required-field">*</span></label>
                         <input type="text" name="header" id="header" class="form-control" required>
+                        <small class="text-muted">Add the page header eg. Home, contact, about us, etc</small>
                     </div>
                     <div class="col-md-6">
                         <label for="footer">Footer:</label>
                         <input type="text" name="footer" id="footer" class="form-control">
+                        <small class="text-muted">You can add your contact details here</small>
                     </div>
                 </div>
 
